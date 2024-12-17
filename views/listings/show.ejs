@@ -11,7 +11,8 @@
                         AllListings.image.url.endsWith('.wmv'))) { %>
 
                         <video class="card-img-top mb-4" controls>
-                            <source src="<%= AllListings.image.url %>" type="video/mp4">
+                            <source src="<%= AllListings.image.url %>" 
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <% } else if (AllListings.image && (AllListings.image.url.endsWith('.jpg') ||
