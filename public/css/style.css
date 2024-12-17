@@ -1,0 +1,12 @@
+.card .card-img-top {
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 10px !important;
+}
+
+.container-fluid.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}

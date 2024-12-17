@@ -1,0 +1,52 @@
+<%- include("../includes/layout/boilerplate.ejs") %>
+
+    <div class="container mt-2">
+        <% if (AllListings && AllListings.length) { %>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <% for (let listing of AllListings) { %>
+                    <div class="col">
+                        <div class="card mb-5 mt-2">
+                            <a class="listingNavigator" href="/listings/<%=listing.id%>" style="text-decoration: none;">
+                                <% if (listing.image && (listing.image.url.endsWith('.mp4') ||
+                                    listing.image.url.endsWith('.webm') || listing.image.url.endsWith('.ogg') ||
+                                    listing.image.url.endsWith('.mov') || listing.image.url.endsWith('.avi'))) { %>
+                                    <video style="height: 200px; width: 100%;" class="card-img-top">
+                                        <source src="<%= listing.image.url %>" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <% } else if (listing.image && (listing.image.url.endsWith('.jpg') ||
+                                        listing.image.url.endsWith('.jpeg') || listing.image.url.endsWith('.png') ||
+                                        listing.image.url.endsWith('.gif') || listing.image.url.endsWith('.webp'))) { %>
+                                        <img src="<%= listing.image.url %>" style="height:200px; width: 100%;"
+                                            class="card-img-top" alt="image">
+                                        <% } else { %>
+                                            <div
+                                                style="height: 200px; width: 100%; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                                <span class="text-muted">No media available</span>
+                                            </div>
+                                            <% } %>
+
+                                                <div class="card-body">
+                                                    <span class="fw-bold" style="color: black;">
+                                                        <%= listing.location %>, <%= listing.country %>
+                                                    </span>
+                                                    <p class="text-muted m-0">
+                                                        <%= listing.title %>
+                                                    </p>
+                                                    <span class="fw-bold text-dark">
+                                                        &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN")
+                                                            : 'N/A' %>
+                                                            /night
+                                                    </span>
+                                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <% } else { %>
+                <p class="text-center text-muted">No listings available at the moment.</p>
+                <% } %>
+    </div>
+
+    <%- include("../includes/footer.ejs") %>

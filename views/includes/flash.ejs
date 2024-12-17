@@ -1,0 +1,34 @@
+<% if (success && success.length) { %>
+    <div class="container">
+        <div class="alert mt-4 alert-success col-6 col-sm-6 w-75 offset-1 alert-dismissible fade show" role="alert">
+            <h4 class="text-center"><i class="fa-solid fa-check"></i>
+                <%= success %>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <% } %>
+
+        <% if (error && error.length) { %>
+            <div class="container">
+                <div class="alert mt-4  col-6 col-sm-6 w-75 offset-1 alert-danger alert-dismissible fade show"
+                    role="alert">
+                    <h4 class="text-center">
+                        <%= error %>
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <% } %>
+
+                <% if (warning && warning.length) { %>
+                    <div class="container">
+                        <div class="alert mt-4  col-6 col-sm-6 w-75 offset-1 alert-warning alert-dismissible fade show"
+                            role="alert">
+                            <h4 class="text-center"><i class="fa-solid fa-triangle-exclamation"></i>
+                                <%= warning %>
+                            </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <% } %>

@@ -1,0 +1,30 @@
+ .navbar {
+     background-color: #f8f9fa;
+     border-bottom: 1px solid #dee2e6;
+ }
+
+ .brand-name {
+     font-weight: bold;
+
+ }
+
+ .container-fluid .navbar-brand:hover {
+     color: #ff004c;
+ }
+
+ .nav-Route {
+     font-size: 1.2rem;
+     color: #000000;
+     font-weight: 500;
+ }
+
+ .container-fluid .nav-link:hover,
+ .nav-Route:hover {
+     color: #ff0055;
+ }
+
+
+
+ .container-fluid.navbar-nav>li {
+     margin-left: 15px;
+ }
